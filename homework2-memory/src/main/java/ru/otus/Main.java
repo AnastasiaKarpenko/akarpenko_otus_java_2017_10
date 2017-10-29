@@ -6,20 +6,17 @@ package ru.otus;
 
 import java.lang.management.ManagementFactory;
 
-import static ru.otus.MemoryEstimator.estimateSize;
-
 @SuppressWarnings({"RedundantStringConstructorCall", "InfiniteLoopStatement"})
 public class Main {
     public static void main(String... args) throws InterruptedException {
+        MemoryEstimator memoryEstimator = new MemoryEstimator();
         System.out.println("pid: " + ManagementFactory.getRuntimeMXBean().getName());
-        while (true) {
-            estimateSize(new String("Hello world"));
-            estimateSize(new Object());
-            Thread.sleep(1000);
-        }
 
+            memoryEstimator.estimateObjectSize(new String(""), 1000000);
+            memoryEstimator.estimateObjectSize(new String(""), 2000000);
 
+            memoryEstimator.estimateObjectSize(new Object(), 1000000);
+            memoryEstimator.estimateObjectSize(new Object(), 2000000);
     }
-
 }
 
