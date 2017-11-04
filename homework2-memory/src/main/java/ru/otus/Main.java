@@ -11,12 +11,12 @@ public class Main {
     public static void main(String... args) throws InterruptedException {
         MemoryEstimator memoryEstimator = new MemoryEstimator();
         System.out.println("pid: " + ManagementFactory.getRuntimeMXBean().getName());
-
             memoryEstimator.estimateObjectSize(new String(""), 1000000);
             memoryEstimator.estimateObjectSize(new String(""), 2000000);
 
             memoryEstimator.estimateObjectSize(new Object(), 1000000);
             memoryEstimator.estimateObjectSize(new Object(), 2000000);
+
     }
 }
 
