@@ -210,6 +210,14 @@ public class AnastasiasArrayList<T> implements List<T> {
         containerLength = newSize;
     }
 
+    public void printToString() {
+       String result = "";
+        for (Object t: this) {
+            result += t + ", ";
+        }
+        System.out.println(result);
+    }
+
 
     class AnastasiasIterator<T> implements ListIterator<T> {
 
